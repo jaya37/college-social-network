@@ -1,0 +1,55 @@
+<app-nav [student]="true"></app-nav>
+<div class="container mt-1">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="display-6 text-center mb-2">Welcome To Chatroom</div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="display-6 text-center">Users</div>
+                            <div class="list-group">
+                                <button *ngFor="let student of students" (click)="setChat(student.name)"
+                                    class="list-group-item list-group-item-action">{{student.name}}</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card border-success">
+                                        <div class="card-header display-6">Received</div>
+                                        <div class="card-body">
+                                            <div class="card-text" *ngFor="let message of receivedMessages">{{message}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card border-success">
+                                        <div class="card-header display-6">Sent</div>
+                                        <div class="card-body">
+                                            <div class="card-text" *ngFor="let message of sentMessages">{{message}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-lg-11">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="message" [(ngModel)]="message"
+                                            placeholder="Message" />
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1">
+                                    <button type="submit" class="btn btn-primary h-100"
+                                        (click)="sendMessage()">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,28 @@
+<app-nav [admin]="true"></app-nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <table class="table table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+
+                <tr *ngFor="let officer of officers">
+                    <td>{{officer.id}}</td>
+                    <td>{{officer.name}}</td>
+                    <td>{{officer.email}}</td>
+                    <td>{{officer.phone}}</td>
+                    <td>
+                        <button class="btn btn-outline-danger" (click)="deleteOfficer(officer.id)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-2"> </div>
+    </div>
+</div>

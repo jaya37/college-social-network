@@ -1,0 +1,22 @@
+<div class="alert alert-success" *ngIf="success">Post Uploaded SuccessFully</div>
+<div class="alert alert-danger" *ngIf="error">Something went wrong plese try again</div>
+<div class="card">
+    <div class="card-body">
+        <div class="form-floating">
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title" required
+                [(ngModel)]="title" />
+            <label for="title">Title</label>
+        </div>
+        <div class="mt-3">
+            <textarea type="text" name="content" id="Content" rows="3" class="form-control" placeholder="Content"
+                [(ngModel)]="content" required></textarea>
+        </div>
+        <div class="mt-3">
+            <input type="file" name="file" id="file" class="form-control" placeholder="Upload Image Here"
+                accept="image/*" (change)="handleFileChange($event)" />
+        </div>
+        <div class="form-floating mt-2">
+            <input type="submit" value="Add Post" class="btn btn-success w-100" (click)="uploadPost($event)" />
+        </div>
+    </div>
+</div>

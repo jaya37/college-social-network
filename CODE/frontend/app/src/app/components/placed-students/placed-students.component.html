@@ -1,0 +1,27 @@
+<app-nav [placement]="true"></app-nav>
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <table class="table table-hover">
+                <tr>
+                    <th>RollNo</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+
+                <tr *ngFor="let student of placedStudents">
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.phone}}</td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>

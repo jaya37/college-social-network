@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">College Network</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Landing Nav -->
+        <div *ngIf="main" class="d-flex">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            </div>
+        </div>
+
+        <!-- Admin Nav -->
+        <div *ngIf="admin" class="d-flex">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/admin">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin/regOfficer">AddOfficer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin/manageStudents">ManageStudents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin/manageOfficers">ManageOfficers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin/approvePosts">ApprovePosts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Student Nav -->
+        <div *ngIf="student" class="d-flex">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/student">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/student/addPost">AddPost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/student/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Officer Nav -->
+        <div *ngIf="officer" class="d-flex">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/officer">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/officer/addPost">AddPost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/officer/listStudents">ListStudents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Placement Nav -->
+        <div *ngIf="placement" class="d-flex">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/placement">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/placement/listStudents">ListStudents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/placement/placedStudents">PlacedStudents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,49 @@
+<div class="alert alert-success" *ngIf="success">Successfully Addedd Officer</div>
+<div class="alert alert-danger" *ngIf="error">{{msg}}</div>
+<div class="card border-success">
+    <div class="card-body">
+
+        <div class="form-floating">
+            <input type="text" name="name" id="name" [(ngModel)]="officer.name" class="form-control" placeholder="Name"
+                required />
+            <label for="name">Name</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="email" name="email" id="email" [(ngModel)]="officer.email" class="form-control"
+                placeholder="Email" required />
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="number" name="phone" id="phone" class="form-control" [(ngModel)]="officer.phone"
+                placeholder="Phone" required />
+            <label for="phone">Phone</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="text" name="phone" id="subject" class="form-control" [(ngModel)]="officer.subject"
+                placeholder="Subject" required />
+            <label for="subject">Subject</label>
+        </div>
+        <div class="form-floating mt-3">
+            <select class="form-select" required (change)="handleChange($event)">
+                <option selected>Select Department</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="CSE">CSE</option>
+                <option value="MECH">MECH</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+            </select>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="password" name="password" [(ngModel)]="officer.password" id="password" required
+                class="form-control" placeholder="Password" />
+            <label for="password">Password</label>
+        </div>
+        <div>
+            <button type="submit" (click)="handleSubmit()" class="btn btn-success mt-2 w-100"
+                *ngIf="!update">Add</button>
+            <button type="submit" (click)="handleUpdate()" class="btn btn-success mt-2 w-100"
+                *ngIf="update">Update</button>
+        </div>
+
+    </div>
+</div>

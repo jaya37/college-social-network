@@ -1,0 +1,44 @@
+<app-nav [student]="true"></app-nav>
+<div class="container-fluid mt-1">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 text-center">
+            <div class="display-5">Your Feed</div>
+            <div class="card border-info">
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div class="card mt-2 border-dark d-flex" *ngFor="let post of posts">
+                            <img [src]="'data:image/jpeg;base64,' + post.imageData" [alt]="post.title"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title">{{post.title}}</div>
+                                <div class="card-text">{{post.content}}</div>
+                                <div class="card-text">by :{{post.creator}}</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        {{post.likes}}
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button class="btn btn-success" (click)="likePost(post)">Like</button>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button class="btn btn-danger" (click)="dislikePost(post)">Dislike</button>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        {{post.dislikes}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
